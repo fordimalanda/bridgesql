@@ -1,4 +1,4 @@
-# BridgeSQL v2.0.2
+# BridgeSQL v2.1.0
 
 **BridgeSQL** is a lightweight, universal PHP library designed to simplify the use of PDO. It acts as a robust bridge between your code and **10 different database management systems (DBMS)**, automating connection configuration, data type management, query debugging, and transaction safety.
 
@@ -76,7 +76,7 @@ $db->execute("INSERT INTO users (name, active) VALUES (?, ?)", ["Molengo", true]
 // --- Debugging Features (New in v2.0.1) ---
 
 // Get the last executed query with parameters injected
-echo $db->getLastQuery(); 
+echo $db->getLastQuery();
 // Output: INSERT INTO users (name, active) VALUES ('Molengo', 1)
 
 // Get full session logs (SQL, duration, and timestamp)
