@@ -1,9 +1,9 @@
 {
-    "name": "fomadev/bridgesql",
+    "name": "fordimalanda/bridgesql",
     "description": "Universal PDO library supporting 10 DBMS.",
     "type": "library",
     "version": "2.0.2",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "MOLENGO MALANDA FORDI",
