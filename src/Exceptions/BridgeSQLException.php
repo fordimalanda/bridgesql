@@ -1,7 +1,8 @@
 <?php
 
-/* * Copyright (c) 2026 Fordi / FomaDev.
- * Licensed under FomaDev Public License.
+/*
+ * Copyright (c) 2026 fordimalanda
+ * Licensed under the MIT License.
  * See LICENSE file in the project root for full license information.
  */
 
