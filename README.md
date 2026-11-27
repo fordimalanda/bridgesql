@@ -2,8 +2,8 @@
 
 **BridgeSQL** is a lightweight, universal PHP library designed to simplify the use of PDO. It acts as a robust bridge between your code and **10 different database management systems (DBMS)**, automating connection configuration, data type management, query debugging, and transaction safety.
 
-[![Build Status](https://github.com/fomadev/bridgesql/actions/workflows/ci.yml/badge.svg)](https://github.com/fomadev/bridgesql/actions)
-[![License: FPL](https://img.shields.io/badge/License-FPL-orange.svg)](LICENSE)
+[![Build Status](https://github.com/fordimalanda/bridgesql/actions/workflows/ci.yml/badge.svg)](https://github.com/fordimalanda/bridgesql/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PHP Version](https://img.shields.io/badge/PHP-%3E%3D%208.0-blue.svg)](https://www.php.net/)
 
 ## Features
@@ -21,7 +21,8 @@
 Use [Composer](https://getcomposer.org/) to install the library:
 
 ```bash
-composer require fomadev/bridgesql
+composer require fordimalanda/bridgesql
+
 ```
 
 ## Supported DBMS
@@ -29,21 +30,13 @@ composer require fomadev/bridgesql
 BridgeSQL facilitates connection to the following systems:
 
 1. **MySQL** & **MariaDB**
-
 2. **PostgreSQL**
-
 3. **SQLite** (Local file or `:memory:`)
-
 4. **Microsoft SQL Server** (MSSQL)
-
 5. **Oracle** (OCI)
-
 6. **IBM DB2**
-
 7. **Firebird**
-
 8. **Informix**
-
 9. **Sybase** (SAP ASE)
 
 ## Quick Use
@@ -61,6 +54,7 @@ return [
     'password' => '',
     'charset'  => 'utf8mb4'
 ];
+
 ```
 
 ### Query Execution & Debugging
@@ -74,7 +68,7 @@ $config = require 'config/database.php';
 $db = new BridgeSQL($config);
 
 // Retrieve a single line
-$user = $db->fetch("SELECT * FROM users WHERE id = :id", ['id' => 1]);
+$user =$db->fetch("SELECT * FROM users WHERE id = :id", ['id' => 1]);
 
 // Insert data with auto-typing
 $db->execute("INSERT INTO users (name, active) VALUES (?, ?)", ["Molengo", true]);
@@ -86,8 +80,9 @@ echo $db->getLastQuery();
 // Output: INSERT INTO users (name, active) VALUES ('Molengo', 1)
 
 // Get full session logs (SQL, duration, and timestamp)
-$logs = $db->getDebugLog();
+$logs =$db->getDebugLog();
 print_r($logs);
+
 ```
 
 ### Transactions
@@ -99,10 +94,10 @@ try {
     $db->execute("UPDATE accounts SET balance = balance - 100 WHERE id = 1");
     $db->execute("UPDATE accounts SET balance = balance + 100 WHERE id = 2");
     $db->commit();
-} catch (Exception $e) {
-    $db->rollBack();
+} catch (Exception $e) {$db->rollBack();
     throw $e;
 }
+
 ```
 
 ## Contributing
@@ -111,8 +106,4 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct
 
 ## License
 
-This project is licensed under the **FomaDev Public License (FPL)**. 
-- **Free** for use as a dependency in personal and commercial projects.
-- **Paid** license required for redistribution, derivative libraries, or competing commercial services.
-
-See the [LICENSE](LICENSE) file for the full text.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for the full license text.
